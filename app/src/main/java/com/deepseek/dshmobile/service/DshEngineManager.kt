@@ -163,7 +163,10 @@ class DshEngineManager private constructor(private val context: Context) {
                 conn.connectTimeout = 30_000
                 conn.readTimeout = 60_000
 
-                val body = """{"content":${""$content""},${"sessionId":"$sessionId"}"""
+                val body = org.json.JSONObject().apply {
+                    put("content", content)
+                    put("sessionId", sessionId ?: org.json.JSONObject.NULL)
+                }.toString()
                 conn.outputStream.use { it.write(body.toByteArray()) }
 
                 val responseCode = conn.responseCode
