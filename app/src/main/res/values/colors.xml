@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="ic_launcher_background">#1976D2</color>
+
+    <!-- Theme colors referenced by values/themes.xml and layout/activity_main.xml -->
+    <color name="primary_dark">#1565C0</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="background">#F5F5F5</color>
 </resources>
